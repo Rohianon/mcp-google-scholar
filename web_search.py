@@ -141,6 +141,7 @@ def advanced_search(query, author: None, year_range=None, num_results=5):
 if __name__ == '__main__':
     query = 'machine learning'
     results = search(query, num_results=5)
+    print(results)
     print('Result for key word search:')
     for result in results:
         print(f"\nTitle: {result['Title']}")
@@ -148,3 +149,25 @@ if __name__ == '__main__':
         print(f"Abstract: {result['Abstract']}")
         print(f"URL: {result['URL']}")
         print("-" * 80)
+
+    advanced_query = 'machine learning'
+    advanced_results = advanced_search(advanced_query, author="Ian Goodfellow", year_range=(2010, 2021), num_results=5)
+    print("\nResults for advanced search:")
+    for result in advanced_results:
+        print(f"\nTitle: {result['Title']}")
+        print(f"Authors: {result['Authors']}")
+        print(f"Abstract: {result['Abstract']}")
+        print(f"URL: {result['URL']}")
+        print("-" * 80)
+
+
+
+    # Retrieve the author's data, fill-in, and print
+    search_query = scholarly.search_author('Steven')
+    # 4.Retrieve the first result from the iterator
+    print(list(search_query))
+    first_author_result = list(search_query)
+    scholarly.pprint(first_author_result)
+
+    author = scholarly.fill(first_author_result)
+    scholarly.pprint(author)
