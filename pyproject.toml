@@ -1,0 +1,19 @@
+[project]
+name = "mcp-google-scholar"
+version = "0.1.0"
+description = "Mcp trial"
+authors = [
+    {name = "Rohianon",email = "rohianon48@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "scholarly (>=1.7.11,<2.0.0)",
+    "mcp (>=1.11.0,<2.0.0)",
+    "asyncio (>=3.4.3,<4.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
